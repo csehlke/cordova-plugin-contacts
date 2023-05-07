@@ -186,7 +186,10 @@ public class ContactManager extends CordovaPlugin {
                 String id = contactAccessor.save(contact);
                 if (id != null) {
                     try {
-                        res = contactAccessor.getContactById(id);
+                        // <customized>
+                        res = id;
+                        // res = contactAccessor.getContactById(id);
+                        // </ customized>
                     } catch (JSONException e) {
                         LOG.e(LOG_TAG, "JSON fail.", e);
                     }
